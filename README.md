@@ -2,9 +2,9 @@
 
 ## 1. Stwórz lazy loadowany moduł wyświetlający formularz dodawania kontaktu 
 Formularz powinien zawierać pola:
-  - wyboru użytkownika, dla którego tworzymy kontakt (select) - pokazujemy imię i nazwisko użytkownika
-  - imię oraz nazwisko
-  - email
+  * wyboru użytkownika, dla którego tworzymy kontakt (select) - pokazujemy imię  nazwisko użytkownika
+  * imię oraz nazwisko
+  * email
 
 ## 2. Dodaj customowy walidator do pola email, tak aby sprawdzał poprawnpść adresu. Email nie może być z domeny `prowly.com`, a dodatkowo nie chcemy by zwierał w sobie tag, czyli znak `+`.
 
