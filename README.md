@@ -10,4 +10,4 @@ Formularz powinien zawierać pola:
 
 ## 3. W widoku głównym mamy listę użytkowników - kliknięcie na jednego z nich powinno przenieść do widoku formularza i ustawionym wybranym wcześniej użytkownikiem.
 
-## 4. Obok imienia i nazwiska chcemy wyświetlić dodatkowo numer telefonu, który dostępny jest w oddzielnym streamie.
+## 4. Na liście obok imienia i nazwiska chcemy wyświetlić dodatkowo numer telefonu, który dostępny jest w oddzielnym streamie, stwórz jeden stream zawierający wszystkie dane.

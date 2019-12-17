@@ -1,9 +1,9 @@
 {
-  "users": [
+  "profiles": [
     {
       "id": "10",
       "phone": "+48 700 900 900",
-      "userID": "1"
+      "userId": "1"
     },
     {
       "id": "14",
