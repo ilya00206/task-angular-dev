@@ -12,3 +12,7 @@ export interface IProfile {
   avatarUrl?: string;
   phone: string;
 }
+
+export interface IUserWithProfile extends IUser {
+  profile: IProfile;
+}
