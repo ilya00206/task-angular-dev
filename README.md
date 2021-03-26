@@ -14,4 +14,3 @@ Formularz powinien zawierać pola:
 ## 5. Na liście obok imienia i nazwiska chcemy wyświetlić dodatkowo numer telefonu, który dostępny jest w oddzielnym streamie (getProfiles), stwórz jeden stream, który wzbogaci usera o atrybut profil (patrz interfejs IUserWithProfile).
 
 ## 6. Komponent z formularzem przenieś do oddzielnego lazy-loadowanego modułu.
-ć
