@@ -12,7 +12,7 @@ import { getUsers } from './../../../../state/state.selectors';
     <h1>Users</h1>
 
     <a [routerLink]="['', 'contacts', 'new']">
-      <h2>Go to user create</h2>
+      <h2>Go to contact create</h2>
     </a>
 
     <ul *ngFor="let user of users$ | async">
