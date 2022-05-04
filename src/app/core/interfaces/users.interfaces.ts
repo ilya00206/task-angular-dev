@@ -1,4 +1,4 @@
-export interface IUser {
+export interface User {
   id: number;
   firstName: string;
   lastName: string;
@@ -6,13 +6,13 @@ export interface IUser {
   profileId: number;
 }
 
-export interface IProfile {
+export interface Profile {
   id: number;
   userId: number;
   avatarUrl?: string;
   phone: string;
 }
 
-export interface IUserWithProfile extends IUser {
-  profile: IProfile;
+export interface UserWithProfile extends User {
+  profile: Profile;
 }

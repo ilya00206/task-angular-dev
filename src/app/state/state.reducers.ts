@@ -1,12 +1,12 @@
 import { createReducer, on, ActionReducerMap, Action } from '@ngrx/store';
 import { InjectionToken } from '@angular/core';
 
-import { IUser, IProfile } from './../core/interfaces/users.interfaces';
+import { User, Profile } from './../core/interfaces/users.interfaces';
 import { GetUsersSuccess, GetProfilesSuccess } from './state.actions';
 
 export interface UsersState {
-  users: IUser[];
-  profiles: IProfile[];
+  users: User[];
+  profiles: Profile[];
 }
 
 export const initialState: UsersState = {
