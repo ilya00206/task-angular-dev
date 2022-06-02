@@ -1,5 +1,5 @@
-# 🇬🇧 English 🇺🇸 version below ⬇️⬇️⬇️
-
+# 🇵🇱 Polish version (🇬🇧🇺🇸 English version below ⬇️⬇️⬇️)
+🇺
 ### Prosta aplikacja zbudowana w Angularze 13 wykorzystująca NgRx.
 
 ### Lista uytkowników dostępna pod URL: `http://localhost:4200/users`
@@ -25,6 +25,7 @@ Wymagania odnośnie adresu email:
 
 ### 6. Komponent z formularzem przenieś do oddzielnego lazy-loadowanego modułu wewntąrz folderu `src/app/lazy-modules`.
 
+# 🇬🇧🇺🇸 English version
 
 ### Simple Angular 13 + NgRx app.
 
