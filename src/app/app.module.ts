@@ -7,14 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
-import { UsersService } from './core/services/users.service';
+import { AnimalsService } from './core/services/animals.service';
 import { AppComponent } from './app.component';
-import { UsersListComponent } from './pages/users/containers/list/list.component';
+import { AnimalsListComponent } from './pages/animals/containers/list/list.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
-  declarations: [AppComponent, UsersListComponent],
+  declarations: [AppComponent, AnimalsListComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
@@ -26,7 +26,7 @@ import { EffectsModule } from '@ngrx/effects';
       maxAge: 25,
     }),
   ],
-  providers: [UsersService, AppEffects],
+  providers: [AnimalsService, AppEffects],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

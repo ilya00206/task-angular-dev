@@ -1,34 +1,37 @@
 import { createReducer, on, ActionReducerMap, Action } from '@ngrx/store';
 import { InjectionToken } from '@angular/core';
 
-import { User, Profile } from './../core/interfaces/users.interfaces';
-import { GetUsersSuccess, GetProfilesSuccess } from './state.actions';
+import { GetAnimalsSuccess, GetAnimalsProfilesSuccess } from './state.actions';
+import { AnimalProfile, Animal } from '../core/models';
 
-export interface UsersState {
-  users: User[];
-  profiles: Profile[];
+export interface AnimalsState {
+  animals: Animal[];
+  profiles: AnimalProfile[];
 }
 
-export const initialState: UsersState = {
-  users: undefined,
+export const initialState: AnimalsState = {
+  animals: undefined,
   profiles: undefined,
 };
 
-export const usersReducers = createReducer(
+export const animalsReducers = createReducer(
   initialState,
-  on(GetUsersSuccess, (state, action) => ({ ...state, users: action.payload })),
-  on(GetProfilesSuccess, (state, action) => ({
+  on(GetAnimalsSuccess, (state, action) => ({
+    ...state,
+    animals: action.payload,
+  })),
+  on(GetAnimalsProfilesSuccess, (state, action) => ({
     ...state,
     profiles: action.payload,
   })),
 );
 
 export interface State {
-  users: UsersState;
+  animals: AnimalsState;
 }
 
 export const reducers = {
-  users: usersReducers,
+  animals: animalsReducers,
 };
 
 export const APP_REDUCERS = new InjectionToken<ActionReducerMap<State, Action>>(

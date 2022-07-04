@@ -3,35 +3,40 @@ import { Store } from '@ngrx/store';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { concatMap, switchMap, map } from 'rxjs/operators';
 
-import { UsersService } from './../core/services/users.service';
+import { AnimalsService } from './../core/services/animals.service';
 import {
-  GetUsers,
-  GetUsersSuccess,
-  GetProfiles,
-  GetProfilesSuccess,
+  GetAnimals,
+  GetAnimalsSuccess,
+  GetAnimalsProfiles,
+  GetAnimalsProfilesSuccess,
 } from './state.actions';
 import { State } from './state.reducers';
 
 @Injectable()
 export class AppEffects {
-  getUsers$ = createEffect(() =>
+  getAnimals$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(GetUsers),
+      ofType(GetAnimals),
       switchMap(() =>
-        this.usersService
-          .getUsers()
-          .pipe(concatMap(users => [GetUsersSuccess(users), GetProfiles()])),
+        this.animalsService
+          .getAnimals()
+          .pipe(
+            concatMap((animals) => [
+              GetAnimalsSuccess(animals),
+              GetAnimalsProfiles(),
+            ]),
+          ),
       ),
     ),
   );
 
   getProfiles$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(GetProfiles),
+      ofType(GetAnimalsProfiles),
       switchMap(() =>
-        this.usersService
-          .getProfiles()
-          .pipe(map(profiles => GetProfilesSuccess(profiles))),
+        this.animalsService
+          .getAnimalsProfiles()
+          .pipe(map((profiles) => GetAnimalsProfilesSuccess(profiles))),
       ),
     ),
   );
@@ -39,6 +44,6 @@ export class AppEffects {
   constructor(
     private actions$: Actions,
     private store: Store<State>,
-    private usersService: UsersService,
+    private animalsService: AnimalsService,
   ) {}
 }

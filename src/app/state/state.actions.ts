@@ -1,17 +1,17 @@
 import { createAction } from '@ngrx/store';
 
-import { User, Profile } from './../core/interfaces/users.interfaces';
+import { Animal, AnimalProfile } from './../core/models';
 
-export const GetUsers = createAction('Get Users');
+export const GetAnimals = createAction('Get Animals');
 
-export const GetUsersSuccess = createAction(
-  'Get Users Success',
-  (payload: User[]) => ({ payload }),
+export const GetAnimalsSuccess = createAction(
+  'Get Animals Success',
+  (payload: Animal[]) => ({ payload }),
 );
 
-export const GetProfiles = createAction('Get Profiles');
+export const GetAnimalsProfiles = createAction('Get Animals Profiles');
 
-export const GetProfilesSuccess = createAction(
-  'Get Profiles Success',
-  (payload: Profile[]) => ({ payload }),
+export const GetAnimalsProfilesSuccess = createAction(
+  'Get Animals Profiles Success',
+  (payload: AnimalProfile[]) => ({ payload }),
 );

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UsersListComponent } from './pages/users/containers/list/list.component';
+import { AnimalsListComponent } from './pages/animals/containers/list/list.component';
 
 const routes: Routes = [
   {
-    path: 'users',
+    path: 'animals',
     pathMatch: 'full',
-    component: UsersListComponent,
+    component: AnimalsListComponent,
   },
 ];
 

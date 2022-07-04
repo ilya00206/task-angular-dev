@@ -1,9 +1,12 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
-import { UsersState } from 'src/app/state/state.reducers';
+import { AnimalsState } from 'src/app/state/state.reducers';
 
-const getState = createFeatureSelector<UsersState>('users');
+const getState = createFeatureSelector<AnimalsState>('animals');
 
-export const getUsers = createSelector(getState, state => state.users);
+export const getAnimals = createSelector(getState, (state) => state.animals);
 
-export const getProfiles = createSelector(getState, state => state.profiles);
+export const getAnimalsProfiles = createSelector(
+  getState,
+  (state) => state.profiles,
+);
