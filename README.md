@@ -18,7 +18,8 @@ Validator should check:
 
   * email address must not be from `prowly.com` domain
   * provided email must not contain an email tag, a tag in email is added with a `+` sign before `@` (more about tags: https://support.google.com/manufacturers/answer/6184604?hl=en#:~:text=Email%20tags%20are%20a%20handy,address%20with%20the%20tag%20here.)
-### 4. In animals list (`AnimalsListComponent`), when someone clicks on a specific animal, she/he should be redirected to the form component with clicked animal already chosen in select field.
+  
+### 4. In animals list (`AnimalsListComponent`), when user clicks on a specific animal, user should be redirected to the  new virtual owner form component with clicked animal already chosen in select field.
 
 ### 5. In animals list (`AnimalsListComponent`), we want to show animal's photo. Photo is stored in AnimalProfile. Use `getAnimalsProfiles` selector (take a look at `app/src/state`), and combine it with `getAnimals` selector. Remember to dispatch an action to get profiles.
 
