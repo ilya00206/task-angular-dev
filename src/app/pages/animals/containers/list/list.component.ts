@@ -1,9 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { combineLatest } from 'rxjs';
+import { filter, map, tap } from 'rxjs/operators';
+import { mapAnimalWithProfiles } from 'src/app/core/models/animal.model';
 
-import { State } from 'src/app/state/state.reducers';
 import { GetAnimals } from 'src/app/state/state.actions';
-import { getAnimals } from '../../../../state/state.selectors';
+import { State } from 'src/app/state/state.reducers';
+import {
+  getAnimals,
+  getAnimalsProfiles,
+  getAnimalsWithProfiles,
+} from '../../../../state/state.selectors';
 
 @Component({
   selector: 'app-animals-list',
@@ -17,15 +24,29 @@ import { getAnimals } from '../../../../state/state.selectors';
 
     <ul *ngFor="let animal of animals$ | async">
       <li class="animal">
-        {{ animal }}
+        <a [routerLink]="['', 'owners', 'new', animal.id]">
+          <app-animal-item [animal]="animal"></app-animal-item>
+        </a>
       </li>
     </ul>
   `,
 })
 export class AnimalsListComponent implements OnInit {
-  animals$ = this.store.pipe(select(getAnimals));
+  readonly animals$ = this.store.pipe(select(getAnimalsWithProfiles));
 
-  constructor(private store: Store<State>) {}
+  /*** Zadanie nr 5 zrozumiałem w taki sposób, ale napisałem po prostu nowy selektor
+   *  Remember to dispatch an action to get profiles - lista już się pobiera w GetAnimals action jako concatMap więc znowu robić dispatch nie ma sensu
+   */
+
+  // readonly animals$ = combineLatest([
+  //   this.store.select(getAnimals),
+  //   this.store.select(getAnimalsProfiles),
+  // ]).pipe(
+  //   filter(([animals, profiles]) => !!animals && !!profiles),
+  //   map(([animals, profiles]) => mapAnimalWithProfiles(animals, profiles)),
+  // );
+
+  constructor(private readonly store: Store<State>) {}
 
   ngOnInit(): void {
     this.store.dispatch(GetAnimals());

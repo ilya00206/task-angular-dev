@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+<label for="" >fullName</label>
+<input type="text" formControlName="fullName">
+<label for="">email</label>
+<input type="text" formControlName="email">
+<label for="">animal</label>
+<select formControlName="animal">
+    <option *ngFor="let animal of animals$ | async" [ngValue]="animal.id">{{animal.name}}</option>
+ </select>
+ <button (click)="submitForm()">Submit</button>
+</form>

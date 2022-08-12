@@ -15,3 +15,13 @@ export enum AnimalType {
   Monkey = 'monkey',
   Parrot = 'parrot',
 }
+
+export function mapAnimalWithProfiles(
+  animals: Animal[],
+  profiles: AnimalProfile[],
+) {
+  return animals.map((animal) => ({
+    ...animal,
+    profile: profiles.find((profile) => profile.animalId === animal.id),
+  }));
+}

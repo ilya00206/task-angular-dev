@@ -1,20 +1,21 @@
-import { RouterModule } from '@angular/router';
-import { AppEffects } from './state/state.effects';
-import { APP_REDUCERS } from './state/state.reducers';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppEffects } from './state/state.effects';
+import { APP_REDUCERS } from './state/state.reducers';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AnimalsService } from './core/services/animals.service';
-import { AppComponent } from './app.component';
-import { AnimalsListComponent } from './pages/animals/containers/list/list.component';
-import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AnimalsService } from './core/services/animals.service';
+import { AnimalItemComponent } from './pages/animals/components/animal-item/animal-item.component';
+import { AnimalsListComponent } from './pages/animals/containers/list/list.component';
 
 @NgModule({
-  declarations: [AppComponent, AnimalsListComponent],
+  declarations: [AppComponent, AnimalsListComponent, AnimalItemComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
